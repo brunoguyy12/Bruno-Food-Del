@@ -1,0 +1,23 @@
+.sidebar{
+    @apply w-[18%] min-h-screen   border-t-0 text-[max(1vw,10px)];
+    border: 1.5px solid #a9a9a9;
+}
+
+.sidebar-options{
+    @apply pt-[50px] pl-[20%] flex flex-col gap-5
+}
+.sidebar-option{
+    @apply flex items-center gap-3 border border-[#a9a9a9] 
+    border-r-0 rounded-ss-[3px] rounded-ee-[3px] p-[8px_10px] cursor-pointer;
+}
+
+.sidebar-option.active{
+    @apply bg-[#fff0ed] border-tomato;
+
+}
+
+@media (max-width: 900px) {
+    .sidebar-option p{
+        display: none;
+    }
+}

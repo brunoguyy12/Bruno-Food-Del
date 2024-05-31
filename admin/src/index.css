@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior:smooth;
+}
+
+:root{
+  --primary-color: #49557e;
+  --secondary-color: #f9f9f9;
+  --tertiary-color: #f3f4f6;
+  --quaternary-color: #e4e6eb;
+  --quinary-color: #9aa0ac;
+  --senary-color: #6e7681;
+  --septenary-color: #4b5563;
+  --octonary-color: #2d3748;
+  --nonary-color: #1a202c;
+  --denary-color: #171923;
+  --tomato: 
+  
+}
+
+@layer base{
+  body{
+    @apply min-h-screen scroll-smooth bg-[#fcfcfc];
+  }
+  a{
+    @apply no-underline text-inherit;
+  }
+  h1{
+    @apply  text-3xl font-bold
+  }
+  h2{
+    @apply text-2xl font-bold
+  }
+  hr{
+    @apply border-none h-px bg-[#a9a9a9]
+  }
+
+}
+
+body::-webkit-scrollbar{
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: rgba(126, 92, 86, 0.521);
+  border-radius:3px;
+}
+body::-webkit-scrollbar-track{
+  background-color: rgba(255, 99, 71, 0.05);
+}
+
+
+
+.app-content{
+  @apply flex;
+}

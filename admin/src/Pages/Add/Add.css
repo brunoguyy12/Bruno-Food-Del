@@ -1,0 +1,26 @@
+.add{
+    @apply w-[70%] ml-[max(5vw,25px)] mt-fifty text-[#6d6d6d] ;
+}
+
+.add form{
+    @apply gap-5;
+}
+.add-product-name, .add-product-description{
+    @apply w-[max(40%,280px)];
+}
+.add-product-name input, .add-product-description textarea{
+    @apply p-ten w-full border border-neutral-300 hover:border-neutral-500;
+    resize: none;
+}
+
+.add-category-price{
+    @apply flex gap-thirty flex-row;
+}
+
+.add-category-price select, .add-category-price input{
+    @apply max-w-[120px] p-ten border border-neutral-300 hover:border-neutral-500;
+}
+
+.add-btn{
+    @apply max-w-[120px] p-ten border-none bg-black text-white cursor-pointer ;
+}

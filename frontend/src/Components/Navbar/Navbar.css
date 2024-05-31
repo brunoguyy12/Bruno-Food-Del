@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer components{
+    .navbar{
+        @apply py-5 flex justify-between items-center;
+    }
+    .logo{
+        @apply w-[150px];
+    }
+    .navbar-menu{
+        @apply flex gap-5 text-[var(--primary-color)] text-lg *:cursor-pointer;
+    }
+    .navbar-right{
+        @apply flex items-center gap-10 ;
+    }
+    .navbar-button{
+        @apply px-5 py-2 rounded-full transition duration-300 text-[var(--primary-color)] border border-tomato hover:bg-[#fff4f2];
+    }
+    .active{
+        @apply pb-[2px] border-b-2 border-[var(--primary-color)];
+    }
+    .navbar-search-icon{
+        @apply relative;
+    }
+    .dot{
+        @apply absolute size-[10px] bg-[#ff4d4d] rounded-full -top-2 -right-2;
+    }
+}
+
+.navbar-profile{
+    @apply relative;
+}
+.nav-profile-dropdown{
+    @apply absolute hidden right-0 z-10 w-36;
+}
+.navbar-profile:hover .nav-profile-dropdown{
+    @apply flex flex-col gap-ten bg-[#fff4f2] p-[12px_25px] rounded border border-tomato outline-2 outline 
+    outline-slate-100;
+}
+.nav-profile-dropdown li{
+    @apply flex items-center justify-center gap-ten cursor-pointer w-fit hover:text-tomato;
+}
+
+
+@media (max-width: 1050px) {
+    .navbar .logo{
+        width: 140px;
+    }
+    .navbar-menu{
+        gap:20px;
+        font-size: 17px;
+    }
+    .navbar-right{
+        gap:30px;
+    }
+    .navbar-right img{
+        width: 22px;
+    }
+    .navbar-button{
+        padding: 8px 25px;
+    }
+}
+@media (max-width: 900px) {
+    .navbar .logo{
+        width: 120px;
+    }
+    .navbar-menu{
+        gap:15px;
+        font-size: 16px;
+    }
+    .navbar-right{
+        gap:20px;
+    }
+    .navbar-right img{
+        width: 20px;
+    }
+    .navbar-button{
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+@media (max-width: 750px) {
+    
+    .navbar-menu{
+        display: none;
+        gap:20px;
+        font-size: 17px;
+    }
+    
+}

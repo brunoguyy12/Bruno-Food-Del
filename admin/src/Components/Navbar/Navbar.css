@@ -1,0 +1,33 @@
+.navbar{
+    @apply flex justify-between items-center p-[8px_4%];
+}
+
+
+.navbar .logo{
+    @apply w-[max(10vw,80px)];
+}
+.navbar .title{
+    @apply text-[max] ml-2 ;
+}
+
+.navbar .profile{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.navbar-logo-container{
+    @apply flex flex-col justify-end p-1 ;
+}
+
+
+@media (max-width: 700px){
+    .navbar .title{
+        @apply text-[1.5vw];
+    }
+}
+
+@media (max-width:450px) {
+    .navbar .title{
+        @apply text-[2vw];
+    }
+}

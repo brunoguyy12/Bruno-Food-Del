@@ -1,0 +1,34 @@
+    /* .order{
+        @apply bg-slate-100 p-3;
+    } */
+.order-item{
+    @apply grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr] items-start gap-thirty border border-tomato p-5 
+    my-thirty text-sm text-[#505050]
+}
+.order-item-food, .order-item-name{
+    @apply font-semibold;
+}
+
+.order-item-name{
+    @apply mt-thirty mb-[5px] 
+}   
+
+.order-item-address{
+    @apply mb-ten 
+}
+
+.order-item select{
+    @apply bg-[#ffe8e4] border border-tomato w-[max(10vw,120px)] p-ten outline-none;
+}
+
+@media (max-width:1000px) {
+    .order-item{
+        @apply text-[12px] grid-cols-[0.5fr_2fr_1fr] p-[15px_8px];
+    }
+    .order-item select{
+        @apply p-[5px]
+    }
+    .order-item img{
+        @apply w-10;
+    }
+}

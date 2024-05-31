@@ -1,0 +1,8 @@
+.verify{
+    @apply min-h-[60vh] grid ;
+}
+
+.verify .spinner{
+    @apply w-hundred h-hundred place-self-center border-[5px] border-[#bdbdbd] border-t-tomato
+     rounded-full animate-rotateAlways;
+}

@@ -1,0 +1,38 @@
+.my-orders{
+    @apply my-fifty;
+}
+
+.my-orders .container{
+    @apply flex flex-col gap-5 mt-thirty;
+}
+
+.my-orders-order{
+    @apply grid grid-cols-[0.5fr_2fr_1fr_1fr_2fr_1fr] gap-5 items-center gap-thirty text-[14px] p-[10px_20px]
+    text-[#454545] border border-tomato;
+}
+
+.my-orders-order img{
+    @apply w-fifty;
+}
+
+.my-orders-order p span{
+    @apply text-tomato
+}
+
+.my-orders-order p b{
+    @apply font-semibold text-[#454545] ml-1;
+}
+
+.my-orders-order button{
+    @apply border-none py-3 rounded bg-[#ffe1e1] cursor-pointer text-[#454545];
+}
+
+@media (max-width: 900px){
+    .my-orders-order{
+        @apply grid-cols-[1fr_2fr_1fr] text-[12px] ;
+        row-gap: 5px;
+    }
+    .my-orders-order button{
+        font-size: 10px;  
+    }
+}

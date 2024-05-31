@@ -1,0 +1,59 @@
+.cart{
+    @apply mt-[100px]
+}
+.cart-items-title{
+    @apply grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-gray-500 text-[max(1vw,12px)];
+}
+.cart-items-item{
+    @apply my-[10px] text-black;
+}
+.cart-items-item img{
+    @apply w-[50px];
+}
+
+.cart hr{
+    @apply h-[1px] bg-[#e2e2e2] border-none;
+}
+
+
+.cart-bottom{
+    @apply mt-20 flex justify-between gap-[max(12vw,20px)];
+}
+
+.cart-total{
+    @apply flex-1 flex flex-col gap-5;
+}
+.cart-total-details{
+    @apply flex justify-between text-[#555];
+}
+.cart-total hr{
+    @apply my-[10px]
+}
+.cart-total button{
+    @apply text-white bg-tomato w-[max(15vw,200px)] py-3 rounded cursor-pointer;
+}
+
+.cart-promocode{
+    @apply flex-1 
+}
+.cart-promocode p{
+    @apply text-[#555];
+}
+.cart-promocode-input{
+    @apply mt-[10px] flex justify-between items-center bg-[#eaeaea] rounded 
+}
+.cart-promocode-input input{
+    @apply bg-transparent outline-none pl-[10px];
+}
+.cart-promocode-input button{
+    @apply w-[max(10vw,150px)] p-[12px_5px] bg-black text-white rounded cursor-pointer;
+}
+
+@media (max-width: 750px){
+    .cart-bottom{
+        @apply flex-col-reverse
+    }
+    .cart-promocode{
+        @apply justify-start;
+    }
+}

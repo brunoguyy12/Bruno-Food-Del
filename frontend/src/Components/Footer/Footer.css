@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .footer{
+        @apply text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-5 mt-24;
+        padding: 20px 8vw;
+        padding-top:80px;
+    }
+    .footer-content{
+        @apply w-full grid grid-cols-[2fr_1fr_1fr] gap-20;
+
+    }
+    .footer-content-left, .footer-content-right, .footer-content-center{
+        @apply flex flex-col items-start gap-5;
+    }
+    
+}
+
+@media (max-width: 750px) {
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap:35px;
+    }
+    .footer-copyright{
+        text-align: center;
+    }
+}
+

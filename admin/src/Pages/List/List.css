@@ -1,0 +1,19 @@
+.list-table-format{
+    @apply grid grid-cols-[0.5fr_2fr_1fr_1fr_0.5fr]
+     items-center gap-ten p-[12px_15px] border border-[#cacaca] text-[13px]
+}
+.list-table-format.title{
+    @apply bg-[#f9f9f9] ;
+}
+.list-table-format img{
+    @apply w-fifty;
+}
+
+@media (max-width:600px) {
+    .list-table-format{
+        @apply grid-cols-[1fr_3fr_1fr] gap-[15px]
+    }
+    .list-table-format.title{
+        @apply hidden;
+    }
+}
