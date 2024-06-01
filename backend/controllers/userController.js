@@ -29,7 +29,7 @@ const loginUser = async (req, res) => {
     }
     catch(error){
         console.log(error);
-        res.json({success:false, message: "Something went wrong..."})
+        res.json({success:false, message: `Something went wrong...${error}`})
     }
 }
 
