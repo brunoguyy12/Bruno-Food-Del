@@ -5,7 +5,7 @@
 
 @layer components{
     .header{
-        @apply h-[34vw] my-[30px] mx-auto bg-[url('/header_img.png')] bg-no-repeat bg-contain relative;
+        @apply h-[34vw] my-[30px] mx-auto bg-[url('/HeaderN.jpg')] bg-cover bg-right-bottom bg-no-repeat relative rounded-xl;
     }
     .header-contents{
         @apply absolute flex flex-col items-start gap-[1.5vw] max-w-[50%] bottom-[10%] left-[6vw] animate-fadeIn; 
