@@ -9,7 +9,7 @@ const placeOrder = async (req,res) => {
     
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     // console.log("This is the SECRET KEY"+process.env.STRIPE_SECRET_KEY);
-    const frontend_url = "https://tomato-food-delivery-1.onrender.com";
+    const frontend_url = "https://bruno-food-del-1.onrender.com";
   
     try{
         const newOrder = new orderModel({
