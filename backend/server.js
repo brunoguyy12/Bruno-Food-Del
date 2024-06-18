@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path'
 import { connectDB } from './config/db.js';
 import foodRouter from './routes/foodRoute.js';
 import userRouter from './routes/userRoute.js';
@@ -34,6 +35,17 @@ app.use("/api/order", orderRouter);
 app.get('/', (req, res) => {
     res.send("API Working")
 });
+
+// Serve static files from the React app
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/client/build')));
+
+// Catch-all route to serve index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
+
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on http://localhost:${PORT}`)
