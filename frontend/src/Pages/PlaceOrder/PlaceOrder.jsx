@@ -2,7 +2,7 @@
 import React, { useContext, useState,useEffect } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
-window.location.href = session_url;
+
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -49,7 +49,7 @@ const PlaceOrder = () => {
     let response = await axios.post(url+"/api/order/place", orderData, {headers:{token}});  
     if(response.data.success){
       const {session_url} = response.data;
-      window.location.replace(session_url);
+      navigate(session_url);
     }
     else{
       alert("error");
