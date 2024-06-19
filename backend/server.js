@@ -36,15 +36,15 @@ app.get('/', (req, res) => {
     res.send("API Working")
 });
 
-// Serve static files from the React app
+// Serve static files from the Vite frontend build
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '/client/build')));
+const frontendPath = path.join(__dirname, 'frontend', 'dist');
+app.use(express.static(frontendPath));
 
-// Catch-all route to serve index.html
+// Catch-all handler to serve the index.html file for other requests
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.join(frontendPath, 'index.html'));
 });
-
 
 
 app.listen(PORT, ()=>{
