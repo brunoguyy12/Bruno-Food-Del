@@ -68,3 +68,13 @@
 .food-item-counter img{
     width: 30px;
 }
+
+.food-item-skeleton {
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px #00000015;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+    background-color: #f3f3f3;
+}

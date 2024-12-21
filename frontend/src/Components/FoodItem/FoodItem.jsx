@@ -1,10 +1,33 @@
-import React, { useContext, useState } from 'react';
+import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import './FoodItem.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext';
 
-const FoodItem = ({item}) => {
+const FoodItem = ({item, skeleton}) => {
     const { cartItems, addToCart, removeFromCart, url} = useContext(StoreContext);
+
+    if(skeleton){
+        return (
+            <div className='food-item min-h-[380px]'>
+                <div className="food-item-img-container h-[232px]">
+                    <Skeleton className="h-full rounded-t-2xl"/>
+                </div>
+                <div className="food-item-info">
+                    <div className="food-item-name-rating">
+                        <Skeleton className="w-[100px] h-4 rounded-md"/>
+                    </div>
+                    <div className="space-y-1 food-item-desc">
+                        <Skeleton className="w-full h-3 rounded-md"/>
+                        <Skeleton className="w-[150px] h-3 rounded-md"/>
+                    </div>
+                    <div className="food-item-price">
+                        <Skeleton className="w-[50px] h-4 rounded-md"/>
+                    </div>
+                </div>        
+            </div>
+        )
+    }
 
   return (
     <div className='food-item'>
@@ -30,5 +53,35 @@ const FoodItem = ({item}) => {
     </div>
   )
 }
+FoodItem.propTypes = {
+    item: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+    }),
+    skeleton: PropTypes.bool
+};
 
-export default FoodItem
+export default FoodItem;
+
+  
+  const shimmer =
+    "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent";
+  
+
+  const Skeleton = ({ className = "w-[100px] h-[100px]" }) => {
+    return (
+      <div className={`${className} *:w-full *:h-full overflow-hidden`}>
+        <div
+          className={`bg-neutral-200 overflow-hidden  relative ${shimmer}`}
+        ></div>
+      </div>
+    );
+  };
+
+  Skeleton.propTypes = {
+    className: PropTypes.string,
+  };
+  

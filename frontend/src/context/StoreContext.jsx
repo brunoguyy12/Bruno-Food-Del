@@ -10,6 +10,8 @@ const StoreContextProvider = (props) => {
     const url="https://tomato-food-delivery-sqsz.onrender.com";
     const [token, setToken] = useState("");
     const [food_list, setFood_list] = useState([]);
+    // eslint-disable-next-line no-unused-vars
+    const [loading, setLoading] = useState(false);
 
 
     const addToCart = async(itemId)=>{
@@ -55,9 +57,14 @@ const StoreContextProvider = (props) => {
     }
 
     const fetchFoodList = async() => {
+        setLoading(true);
+        console.log('Fetching food items');
         const response = await axios.get(url+"/api/food/list");
+        // await new Promise((resolve) => { setTimeout(resolve, 50000) });
         // const data = await response.json();
+        console.log('Fetched the food items ! ');
         setFood_list(response.data.data);
+        setLoading(false);
     }
 
     const loadCartData = async(token) => {
@@ -69,6 +76,18 @@ const StoreContextProvider = (props) => {
             console.log(error);
         }
     }
+
+    useEffect(() => {
+        async function startFetch(){
+            try{
+                 await fetchFoodList();
+            }
+            catch (error){
+                console.log(error);
+            }
+        }
+        startFetch();
+    }, [])
     
 
     useEffect(() => {
@@ -77,7 +96,6 @@ const StoreContextProvider = (props) => {
             setToken(localStorage.getItem("token"));
             await loadCartData(localStorage.getItem("token"));
         }
-        await fetchFoodList();
       }
       loadData();
     }, [token])
@@ -93,7 +111,8 @@ const StoreContextProvider = (props) => {
         getTotalCartAmount,
         url,
         token,
-        setToken
+        setToken,
+        loading
     }
 
     return(
