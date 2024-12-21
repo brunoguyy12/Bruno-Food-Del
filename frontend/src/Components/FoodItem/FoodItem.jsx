@@ -32,7 +32,7 @@ const FoodItem = ({item, skeleton}) => {
   return (
     <div className='food-item'>
         <div className="food-item-img-container">
-            <img src={url+"/images/"+item.image} alt={item.name} className='food-item-image'/>   
+            <img src={url+"/images/"+item.image} alt={item.name} loading='lazy' className='food-item-image'/>   
             {
                 !cartItems[item._id] ? <img src={assets.add_icon_white} alt='' className='add' onClick={()=>addToCart(item._id)}/>
                 : <div className="food-item-counter">
