@@ -36,7 +36,7 @@ const FoodDisplaySkeleton = () => {
       <h2>Top dishes near you</h2>
       <div className="food-display-list">
         {
-          [1,2,3,4,5,6,7,8].map((item, index)=>{
+          [1,2,3,4,5,6,7,8,9,10,12].map((item, index)=>{
             return <FoodItem key={index} skeleton={true}/>
           })
         }
